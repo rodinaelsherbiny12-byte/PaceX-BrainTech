@@ -1,0 +1,6 @@
+{
+  "name": "NEUROFLOW",
+  "description": "Interactive 3D neurotechnology research prototype supporting Multiple Sclerosis personalized fatigue monitoring with a simulated 8-channel wearable EEG head device, health tracking, medication reminders, voice assistant, and emergency SOS.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

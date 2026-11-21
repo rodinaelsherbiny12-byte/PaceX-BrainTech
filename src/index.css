@@ -1,0 +1,92 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --nf-bg: #f4f7fb;
+  --nf-surface: #ffffff;
+  --nf-surface-alt: #eef2fa;
+  --nf-border: rgba(17, 27, 58, 0.1);
+  --nf-text: #0f172a;
+  --nf-text-muted: #475569;
+  --nf-navy: #111b3a;
+  --nf-purple: #7657f6;
+  --nf-cyan: #20c5d8;
+  --nf-green: #35c98a;
+  --nf-amber: #ffb547;
+  --nf-red: #f05263;
+  --nf-font-scale: 1;
+}
+
+.dark {
+  --nf-bg: #0b1228;
+  --nf-surface: #111b3a;
+  --nf-surface-alt: #162247;
+  --nf-border: rgba(148, 163, 184, 0.16);
+  --nf-text: #f1f5f9;
+  --nf-text-muted: #94a3b8;
+}
+
+html {
+  font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  font-size: calc(16px * var(--nf-font-scale));
+}
+
+h1, h2, h3, .font-display {
+  font-family: "Outfit", "Plus Jakarta Sans", system-ui, sans-serif;
+}
+
+.font-mono-tabular {
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Custom subtle scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.25);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.45);
+}
+
+/* Reduced motion accessibility override */
+.reduce-motion *,
+.reduce-motion *::before,
+.reduce-motion *::after {
+  animation-duration: 0.001ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.001ms !important;
+  scroll-behavior: auto !important;
+}
+
+/* Print optimization for Health Reports PDF export */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #0f172a !important;
+  }
+  aside,
+  header,
+  .no-print {
+    display: none !important;
+  }
+  main {
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+  }
+}
